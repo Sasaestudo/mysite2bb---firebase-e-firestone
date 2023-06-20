@@ -32,6 +32,7 @@ export function TaskContextProvider(props) {
   async function remover(key) {
     try {
       await removeTarefa(key)
+      setMinhasTarefas((valorAtingo) => valorAtingo.filter((item) => item.key != key))
     } catch (error) {
       throw Error(error.message)
     }
